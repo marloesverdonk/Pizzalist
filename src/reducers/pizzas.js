@@ -2,6 +2,8 @@ const reducer = (state = initialState, action = {}) => {
   // console.log('Intitial state: ', state)
   // console.log('Action: ', action.type)    -> gebruik devTools
   switch (action.type) {
+    case 'ADD_PIZZA':
+      return [...state,{...action.payload}]
   default:
     return state
   }
