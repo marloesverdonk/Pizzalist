@@ -1,6 +1,11 @@
 import * as React from 'react'
 
 export default class AddPizzaForm extends React.Component {
+  state = {
+    name: "",
+    description: "",
+    ingredients: ""
+  }
 
   handleChange = (event) => {
     const value = event.target.value;
@@ -21,7 +26,13 @@ export default class AddPizzaForm extends React.Component {
         ingredients: [this.state.ingredients]
       })
     }
+    this.setState({
+      name: "",
+      description: "",
+      ingredients: ""
+    })
   }
+
 
   render() {
     return (<div>
@@ -30,17 +41,17 @@ export default class AddPizzaForm extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <label>
           Name:
-          <input type="text" name="name" onChange={this.handleChange} />
+          <input type="text" name="name" onChange={this.handleChange} value={this.state.name} />
         </label>
         <label>
           <br></br>
           Description:
-          <input type="text" name="description" onChange={this.handleChange} />
+          <input type="text" name="description" onChange={this.handleChange} value={this.state.description} />
         </label>
         <label>
         <br></br>
           Ingredients:
-          <input type="text" name="ingredients" onChange={this.handleChange} />
+          <input type="text" name="ingredients" onChange={this.handleChange} value={this.state.ingredients} />
         </label>
         <input type="submit" value="Submit" />
       </form>
