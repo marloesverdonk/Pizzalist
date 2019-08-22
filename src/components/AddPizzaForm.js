@@ -33,10 +33,12 @@ export default class AddPizzaForm extends React.Component {
           <input type="text" name="name" onChange={this.handleChange} />
         </label>
         <label>
+          <br></br>
           Description:
           <input type="text" name="description" onChange={this.handleChange} />
         </label>
         <label>
+        <br></br>
           Ingredients:
           <input type="text" name="ingredients" onChange={this.handleChange} />
         </label>
